@@ -1,0 +1,2 @@
+auth requisite pam_unix.so
+account required pam_listfile.so item=user sense=deny onerr=fail file=/etc/authusers
