@@ -10,6 +10,7 @@ Vagrant.configure("2") do |config|
   config.vm.define :maestro do |maestro|
     maestro.vm.box = "bento/ubuntu-22.04"  # Especifica la caja para Ubuntu 22.04
     maestro.vm.network :private_network, ip: "192.168.50.3"
+    maestro.vm.network "forwarded_port", guest: 80, host: 8080
     maestro.vm.hostname = "maestro"
     maestro.vm.synced_folder "./maestro", "/home/vagrant/maestro", type: "virtualbox"
   end
